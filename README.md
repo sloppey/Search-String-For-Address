@@ -7,12 +7,6 @@ DWORD TERV_GetCalling(DWORD CALL){
 	return (CALL + *(DWORD*)(CALL + 1)) + 5;
 }
 
-DWORD TERV_SetCalling(DWORD CALL, DWORD nCall){
-	DWORD oldp;
-	VirtualProtect((LPVOID)CALL, 1, PAGE_EXECUTE_READWRITE, &oldp);
-	*(DWORD*)((CALL + *(DWORD*)(CALL + 1)) + 5) = nCall;
-	VirtualProtect((LPVOID)CALL, 1, oldp, &oldp);
-}
 
 DWORD TERV_GetNextCall(DWORD from){
 	for (int i = 0; i < INT_MAX; i++){
