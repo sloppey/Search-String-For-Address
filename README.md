@@ -1,5 +1,5 @@
 # Search-String-For-Address
-auto string searching method (aero is noobo)
+auto string searching method
 
 
 ```C++
